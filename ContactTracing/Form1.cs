@@ -22,5 +22,25 @@ namespace ContactTracing
         {
 
         }
+
+        private void enter_btn_Click(object sender, EventArgs e)
+        {
+
+            StreamWriter outputFile;
+            outputFile = File.CreateText("ContactTracing.txt");
+            outputFile.WriteLine("Name");
+            outputFile.WriteLine("Age");
+            outputFile.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
