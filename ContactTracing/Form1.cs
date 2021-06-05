@@ -27,7 +27,12 @@ namespace ContactTracing
         {
 
             StreamWriter outputFile = new StreamWriter(Application.StartupPath + "\\Informations\\" + "customerDetails.txt"); ;
-            outputFile.WriteLine(label_name.Text + " " + firstName_bx.Text + middleName_bx.Text + surName_bx.Text);
+            outputFile.WriteLine(label_name.Text + " " + firstName_bx.Text + " " + middleName_bx.Text + " " + surName_bx.Text);
+            outputFile.WriteLine(label_Age.Text + " " + age_bx.Text);
+            outputFile.WriteLine(label_phoneNum + " " + phone_bx);
+            outputFile.WriteLine(label_email + " " + email_bx);
+            outputFile.WriteLine(label_add + " " + add_bx);
+            outputFile.WriteLine(label_zipCode + " " + zipCode_bx);
             outputFile.WriteLine();
             outputFile.Close();
         }
@@ -37,12 +42,17 @@ namespace ContactTracing
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void progressBar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void piktyur_Click(object sender, EventArgs e)
         {
 
         }
