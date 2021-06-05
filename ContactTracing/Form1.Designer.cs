@@ -39,7 +39,7 @@ namespace ContactTracing
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label_Age = new System.Windows.Forms.Label();
             this.label_phoneNum = new System.Windows.Forms.Label();
             this.phone_bx = new System.Windows.Forms.TextBox();
             this.label_email = new System.Windows.Forms.Label();
@@ -144,15 +144,15 @@ namespace ContactTracing
             this.label3.Text = "MIDDLE INITIAL";
             this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label4
+            // label_Age
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 226);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Age:";
-            this.label4.Click += new System.EventHandler(this.label1_Click);
+            this.label_Age.AutoSize = true;
+            this.label_Age.Location = new System.Drawing.Point(34, 226);
+            this.label_Age.Name = "label_Age";
+            this.label_Age.Size = new System.Drawing.Size(31, 15);
+            this.label_Age.TabIndex = 3;
+            this.label_Age.Text = "Age:";
+            this.label_Age.Click += new System.EventHandler(this.label1_Click);
             // 
             // label_phoneNum
             // 
@@ -294,7 +294,7 @@ namespace ContactTracing
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(82, 511);
+            this.progressBar1.Location = new System.Drawing.Point(92, 511);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(339, 23);
             this.progressBar1.TabIndex = 4;
@@ -329,7 +329,7 @@ namespace ContactTracing
             this.Controls.Add(this.label_add);
             this.Controls.Add(this.label_email);
             this.Controls.Add(this.label_phoneNum);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label_Age);
             this.Controls.Add(this.label_name);
             this.Controls.Add(this.phone_bx);
             this.Controls.Add(this.textBox2);
@@ -361,7 +361,7 @@ namespace ContactTracing
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_Age;
         private System.Windows.Forms.Label label_phoneNum;
         private System.Windows.Forms.TextBox phone_bx;
         private System.Windows.Forms.Label label_email;
