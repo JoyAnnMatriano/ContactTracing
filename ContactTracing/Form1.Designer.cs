@@ -29,6 +29,7 @@ namespace ContactTracing
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContactTracing_form));
             this.submit_btn = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.surName_bx = new System.Windows.Forms.TextBox();
@@ -56,14 +57,14 @@ namespace ContactTracing
             this.label_confirmation6 = new System.Windows.Forms.Label();
             this.label_confirmation7 = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.bg_color = new System.Windows.Forms.Panel();
+            this.confirmbx_dropdown = new System.Windows.Forms.ComboBox();
             this.bg_color.SuspendLayout();
             this.SuspendLayout();
             // 
             // submit_btn
             // 
-            this.submit_btn.Location = new System.Drawing.Point(156, 476);
+            this.submit_btn.Location = new System.Drawing.Point(187, 491);
             this.submit_btn.Name = "submit_btn";
             this.submit_btn.Size = new System.Drawing.Size(215, 49);
             this.submit_btn.TabIndex = 0;
@@ -80,7 +81,7 @@ namespace ContactTracing
             // 
             // surName_bx
             // 
-            this.surName_bx.Location = new System.Drawing.Point(133, 118);
+            this.surName_bx.Location = new System.Drawing.Point(132, 116);
             this.surName_bx.Name = "surName_bx";
             this.surName_bx.Size = new System.Drawing.Size(127, 23);
             this.surName_bx.TabIndex = 2;
@@ -95,8 +96,8 @@ namespace ContactTracing
             // label_name
             // 
             this.label_name.AutoSize = true;
-            this.label_name.BackColor = System.Drawing.Color.Transparent;
-            this.label_name.Location = new System.Drawing.Point(73, 126);
+            this.label_name.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.label_name.Location = new System.Drawing.Point(84, 124);
             this.label_name.Name = "label_name";
             this.label_name.Size = new System.Drawing.Size(42, 15);
             this.label_name.TabIndex = 3;
@@ -105,14 +106,14 @@ namespace ContactTracing
             // 
             // firstName_bx
             // 
-            this.firstName_bx.Location = new System.Drawing.Point(275, 118);
+            this.firstName_bx.Location = new System.Drawing.Point(265, 116);
             this.firstName_bx.Name = "firstName_bx";
             this.firstName_bx.Size = new System.Drawing.Size(127, 23);
             this.firstName_bx.TabIndex = 2;
             // 
             // middleName_bx
             // 
-            this.middleName_bx.Location = new System.Drawing.Point(418, 118);
+            this.middleName_bx.Location = new System.Drawing.Point(398, 116);
             this.middleName_bx.Name = "middleName_bx";
             this.middleName_bx.Size = new System.Drawing.Size(127, 23);
             this.middleName_bx.TabIndex = 2;
@@ -120,7 +121,7 @@ namespace ContactTracing
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label1.Location = new System.Drawing.Point(170, 144);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 15);
@@ -131,7 +132,7 @@ namespace ContactTracing
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label2.Location = new System.Drawing.Point(314, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 15);
@@ -142,7 +143,7 @@ namespace ContactTracing
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label3.Location = new System.Drawing.Point(442, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 15);
@@ -153,7 +154,7 @@ namespace ContactTracing
             // label_Age
             // 
             this.label_Age.AutoSize = true;
-            this.label_Age.BackColor = System.Drawing.Color.Transparent;
+            this.label_Age.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label_Age.Location = new System.Drawing.Point(84, 176);
             this.label_Age.Name = "label_Age";
             this.label_Age.Size = new System.Drawing.Size(31, 15);
@@ -164,7 +165,7 @@ namespace ContactTracing
             // label_phoneNum
             // 
             this.label_phoneNum.AutoSize = true;
-            this.label_phoneNum.BackColor = System.Drawing.Color.Transparent;
+            this.label_phoneNum.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label_phoneNum.Location = new System.Drawing.Point(208, 171);
             this.label_phoneNum.Name = "label_phoneNum";
             this.label_phoneNum.Size = new System.Drawing.Size(91, 15);
@@ -182,7 +183,7 @@ namespace ContactTracing
             // label_email
             // 
             this.label_email.AutoSize = true;
-            this.label_email.BackColor = System.Drawing.Color.Transparent;
+            this.label_email.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label_email.Location = new System.Drawing.Point(76, 205);
             this.label_email.Name = "label_email";
             this.label_email.Size = new System.Drawing.Size(39, 15);
@@ -200,7 +201,7 @@ namespace ContactTracing
             // label_add
             // 
             this.label_add.AutoSize = true;
-            this.label_add.BackColor = System.Drawing.Color.Transparent;
+            this.label_add.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label_add.Location = new System.Drawing.Point(63, 229);
             this.label_add.Name = "label_add";
             this.label_add.Size = new System.Drawing.Size(52, 15);
@@ -218,7 +219,7 @@ namespace ContactTracing
             // label_zipCode
             // 
             this.label_zipCode.AutoSize = true;
-            this.label_zipCode.BackColor = System.Drawing.Color.Transparent;
+            this.label_zipCode.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label_zipCode.Location = new System.Drawing.Point(418, 232);
             this.label_zipCode.Name = "label_zipCode";
             this.label_zipCode.Size = new System.Drawing.Size(58, 15);
@@ -236,7 +237,7 @@ namespace ContactTracing
             // label_confirmation1
             // 
             this.label_confirmation1.AutoSize = true;
-            this.label_confirmation1.BackColor = System.Drawing.Color.Transparent;
+            this.label_confirmation1.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label_confirmation1.Location = new System.Drawing.Point(42, 348);
             this.label_confirmation1.Name = "label_confirmation1";
             this.label_confirmation1.Size = new System.Drawing.Size(119, 15);
@@ -247,7 +248,7 @@ namespace ContactTracing
             // label_confirmation2
             // 
             this.label_confirmation2.AutoSize = true;
-            this.label_confirmation2.BackColor = System.Drawing.Color.Transparent;
+            this.label_confirmation2.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label_confirmation2.Location = new System.Drawing.Point(42, 363);
             this.label_confirmation2.Name = "label_confirmation2";
             this.label_confirmation2.Size = new System.Drawing.Size(139, 15);
@@ -258,7 +259,7 @@ namespace ContactTracing
             // label_confirmation3
             // 
             this.label_confirmation3.AutoSize = true;
-            this.label_confirmation3.BackColor = System.Drawing.Color.Transparent;
+            this.label_confirmation3.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label_confirmation3.Location = new System.Drawing.Point(42, 378);
             this.label_confirmation3.Name = "label_confirmation3";
             this.label_confirmation3.Size = new System.Drawing.Size(122, 15);
@@ -269,7 +270,7 @@ namespace ContactTracing
             // label_confirmation4
             // 
             this.label_confirmation4.AutoSize = true;
-            this.label_confirmation4.BackColor = System.Drawing.Color.Transparent;
+            this.label_confirmation4.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label_confirmation4.Location = new System.Drawing.Point(42, 393);
             this.label_confirmation4.Name = "label_confirmation4";
             this.label_confirmation4.Size = new System.Drawing.Size(82, 15);
@@ -280,7 +281,7 @@ namespace ContactTracing
             // label_confirmation5
             // 
             this.label_confirmation5.AutoSize = true;
-            this.label_confirmation5.BackColor = System.Drawing.Color.Transparent;
+            this.label_confirmation5.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label_confirmation5.Location = new System.Drawing.Point(42, 408);
             this.label_confirmation5.Name = "label_confirmation5";
             this.label_confirmation5.Size = new System.Drawing.Size(97, 15);
@@ -291,7 +292,7 @@ namespace ContactTracing
             // label_confirmation6
             // 
             this.label_confirmation6.AutoSize = true;
-            this.label_confirmation6.BackColor = System.Drawing.Color.Transparent;
+            this.label_confirmation6.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label_confirmation6.Location = new System.Drawing.Point(42, 423);
             this.label_confirmation6.Name = "label_confirmation6";
             this.label_confirmation6.Size = new System.Drawing.Size(118, 15);
@@ -302,7 +303,7 @@ namespace ContactTracing
             // label_confirmation7
             // 
             this.label_confirmation7.AutoSize = true;
-            this.label_confirmation7.BackColor = System.Drawing.Color.Transparent;
+            this.label_confirmation7.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.label_confirmation7.Location = new System.Drawing.Point(156, 423);
             this.label_confirmation7.Name = "label_confirmation7";
             this.label_confirmation7.Size = new System.Drawing.Size(49, 15);
@@ -312,36 +313,40 @@ namespace ContactTracing
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(73, 447);
+            this.progressBar.Location = new System.Drawing.Point(113, 445);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(339, 23);
             this.progressBar.TabIndex = 4;
-            this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(234, 342);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(242, 94);
-            this.checkedListBox1.TabIndex = 5;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // bg_color
             // 
             this.bg_color.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.bg_color.Controls.Add(this.checkedListBox1);
+            this.bg_color.Controls.Add(this.confirmbx_dropdown);
+            this.bg_color.Controls.Add(this.progressBar);
+            this.bg_color.Controls.Add(this.label_name);
+            this.bg_color.Controls.Add(this.submit_btn);
+            this.bg_color.Controls.Add(this.firstName_bx);
+            this.bg_color.Controls.Add(this.surName_bx);
+            this.bg_color.Controls.Add(this.middleName_bx);
             this.bg_color.Location = new System.Drawing.Point(0, 2);
             this.bg_color.Name = "bg_color";
             this.bg_color.Size = new System.Drawing.Size(568, 583);
             this.bg_color.TabIndex = 6;
             // 
+            // confirmbx_dropdown
+            // 
+            this.confirmbx_dropdown.FormattingEnabled = true;
+            this.confirmbx_dropdown.Location = new System.Drawing.Point(208, 346);
+            this.confirmbx_dropdown.Name = "confirmbx_dropdown";
+            this.confirmbx_dropdown.Size = new System.Drawing.Size(244, 23);
+            this.confirmbx_dropdown.TabIndex = 5;
+            this.confirmbx_dropdown.SelectedIndexChanged += new System.EventHandler(this.combox_selection);
+            // 
             // ContactTracing_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 587);
-            this.Controls.Add(this.progressBar);
+            this.ClientSize = new System.Drawing.Size(566, 587);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -357,22 +362,20 @@ namespace ContactTracing
             this.Controls.Add(this.label_email);
             this.Controls.Add(this.label_phoneNum);
             this.Controls.Add(this.label_Age);
-            this.Controls.Add(this.label_name);
             this.Controls.Add(this.phone_bx);
             this.Controls.Add(this.zipCode_bx);
             this.Controls.Add(this.add_bx);
             this.Controls.Add(this.email_bx);
             this.Controls.Add(this.age_bx);
-            this.Controls.Add(this.middleName_bx);
-            this.Controls.Add(this.firstName_bx);
-            this.Controls.Add(this.surName_bx);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.submit_btn);
             this.Controls.Add(this.bg_color);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(582, 626);
             this.Name = "ContactTracing_form";
             this.Text = "Contact Tracing Form";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.ContactTracing_form_Load);
             this.bg_color.ResumeLayout(false);
+            this.bg_color.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,8 +410,8 @@ namespace ContactTracing
         private System.Windows.Forms.Label label_confirmation6;
         private System.Windows.Forms.Label label_confirmation7;
         private System.Windows.Forms.ProgressBar progressBar;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Panel bg_color;
+        private System.Windows.Forms.ComboBox confirmbx_dropdown;
     }
 }
 

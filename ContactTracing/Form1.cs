@@ -18,11 +18,6 @@ namespace ContactTracing
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void enter_btn_Click(object sender, EventArgs e)
         {
 
@@ -42,17 +37,14 @@ namespace ContactTracing
 
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ContactTracing_form_Load(object sender, EventArgs e)
         {
-
+            confirmbx_dropdown.Items.Add("Yes");
+            confirmbx_dropdown.Items.Add("No");
+            confirmbx_dropdown.Items.Add("I am not sure");
         }
 
-        private void progressBar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void piktyur_Click(object sender, EventArgs e)
+        private void combox_selection(object sender, EventArgs e)
         {
 
         }
