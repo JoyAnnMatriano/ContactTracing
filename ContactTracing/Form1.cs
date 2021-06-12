@@ -20,21 +20,7 @@ namespace ContactTracing
 
         private void enter_btn_Click(object sender, EventArgs e)
         {
-
-            StreamWriter outputFile = new StreamWriter(Application.StartupPath + "\\Informations\\" + "customerDetails.txt"); ;
-            outputFile.WriteLine(label_name.Text + " " + firstName_bx.Text + " " + middleName_bx.Text + " " + surName_bx.Text);
-            outputFile.WriteLine(label_Age.Text + " " + age_bx.Text);
-            outputFile.WriteLine(label_phoneNum + " " + phone_bx);
-            outputFile.WriteLine(label_email + " " + email_bx);
-            outputFile.WriteLine(label_add + " " + add_bx);
-            outputFile.WriteLine(label_zipCode + " " + zipCode_bx);
-            outputFile.WriteLine();
-            outputFile.Close();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            ImportantInfo(firstName_bx.Text, middleName_bx.Text, surName_bx.Text, byte.Parse(age_bx.Text));
         }
 
         private void ContactTracing_form_Load(object sender, EventArgs e)
@@ -44,9 +30,17 @@ namespace ContactTracing
             confirmbx_dropdown.Items.Add("I am not sure");
         }
 
-        private void combox_selection(object sender, EventArgs e)
+        private void ImportantInfo(string firstName, string middleName, string surName, byte age)
         {
-
+            StreamWriter outputFile = new StreamWriter(Application.StartupPath + "\\Informations\\" + "customerDetails.txt"); ;
+            outputFile.WriteLine(label_name.Text + " " + firstName + " " + middleName + " " + surName);
+            outputFile.WriteLine(label_Age.Text + " " + age_bx.ToString());
+            outputFile.WriteLine(label_phoneNum + " " + phone_bx);
+            outputFile.WriteLine(label_email + " " + email_bx);
+            outputFile.WriteLine(label_add + " " + add_bx);
+            outputFile.WriteLine(label_zipCode + " " + zipCode_bx);
+            outputFile.WriteLine();
+            outputFile.Close();
         }
     }
 }

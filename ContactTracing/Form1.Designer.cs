@@ -102,7 +102,6 @@ namespace ContactTracing
             this.label_name.Size = new System.Drawing.Size(42, 15);
             this.label_name.TabIndex = 3;
             this.label_name.Text = "Name:";
-            this.label_name.Click += new System.EventHandler(this.label1_Click);
             // 
             // firstName_bx
             // 
@@ -127,7 +126,6 @@ namespace ContactTracing
             this.label1.Size = new System.Drawing.Size(62, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "SURNAME";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -138,7 +136,6 @@ namespace ContactTracing
             this.label2.Size = new System.Drawing.Size(72, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "FIRST NAME";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -149,7 +146,6 @@ namespace ContactTracing
             this.label3.Size = new System.Drawing.Size(90, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "MIDDLE INITIAL";
-            this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
             // label_Age
             // 
@@ -160,7 +156,6 @@ namespace ContactTracing
             this.label_Age.Size = new System.Drawing.Size(31, 15);
             this.label_Age.TabIndex = 3;
             this.label_Age.Text = "Age:";
-            this.label_Age.Click += new System.EventHandler(this.label1_Click);
             // 
             // label_phoneNum
             // 
@@ -171,7 +166,6 @@ namespace ContactTracing
             this.label_phoneNum.Size = new System.Drawing.Size(91, 15);
             this.label_phoneNum.TabIndex = 3;
             this.label_phoneNum.Text = "Phone Number:";
-            this.label_phoneNum.Click += new System.EventHandler(this.label1_Click);
             // 
             // phone_bx
             // 
@@ -189,7 +183,6 @@ namespace ContactTracing
             this.label_email.Size = new System.Drawing.Size(39, 15);
             this.label_email.TabIndex = 3;
             this.label_email.Text = "Email:";
-            this.label_email.Click += new System.EventHandler(this.label1_Click);
             // 
             // email_bx
             // 
@@ -207,7 +200,6 @@ namespace ContactTracing
             this.label_add.Size = new System.Drawing.Size(52, 15);
             this.label_add.TabIndex = 3;
             this.label_add.Text = "Address:";
-            this.label_add.Click += new System.EventHandler(this.label1_Click);
             // 
             // add_bx
             // 
@@ -225,7 +217,7 @@ namespace ContactTracing
             this.label_zipCode.Size = new System.Drawing.Size(58, 15);
             this.label_zipCode.TabIndex = 3;
             this.label_zipCode.Text = "Zip Code:";
-            this.label_zipCode.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // zipCode_bx
             // 
@@ -243,7 +235,6 @@ namespace ContactTracing
             this.label_confirmation1.Size = new System.Drawing.Size(119, 15);
             this.label_confirmation1.TabIndex = 3;
             this.label_confirmation1.Text = "I confirm that I or my";
-            this.label_confirmation1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label_confirmation2
             // 
@@ -254,7 +245,6 @@ namespace ContactTracing
             this.label_confirmation2.Size = new System.Drawing.Size(139, 15);
             this.label_confirmation2.TabIndex = 3;
             this.label_confirmation2.Text = "household member have";
-            this.label_confirmation2.Click += new System.EventHandler(this.label1_Click);
             // 
             // label_confirmation3
             // 
@@ -265,7 +255,6 @@ namespace ContactTracing
             this.label_confirmation3.Size = new System.Drawing.Size(122, 15);
             this.label_confirmation3.TabIndex = 3;
             this.label_confirmation3.Text = "not had COVID-19 OR";
-            this.label_confirmation3.Click += new System.EventHandler(this.label1_Click);
             // 
             // label_confirmation4
             // 
@@ -276,7 +265,6 @@ namespace ContactTracing
             this.label_confirmation4.Size = new System.Drawing.Size(82, 15);
             this.label_confirmation4.TabIndex = 3;
             this.label_confirmation4.Text = "have not been";
-            this.label_confirmation4.Click += new System.EventHandler(this.label1_Click);
             // 
             // label_confirmation5
             // 
@@ -287,7 +275,6 @@ namespace ContactTracing
             this.label_confirmation5.Size = new System.Drawing.Size(97, 15);
             this.label_confirmation5.TabIndex = 3;
             this.label_confirmation5.Text = "experiencing any";
-            this.label_confirmation5.Click += new System.EventHandler(this.label1_Click);
             // 
             // label_confirmation6
             // 
@@ -298,7 +285,6 @@ namespace ContactTracing
             this.label_confirmation6.Size = new System.Drawing.Size(118, 15);
             this.label_confirmation6.TabIndex = 3;
             this.label_confirmation6.Text = "COVID-19 symptoms";
-            this.label_confirmation6.Click += new System.EventHandler(this.label1_Click);
             // 
             // label_confirmation7
             // 
@@ -309,7 +295,6 @@ namespace ContactTracing
             this.label_confirmation7.Size = new System.Drawing.Size(49, 15);
             this.label_confirmation7.TabIndex = 3;
             this.label_confirmation7.Text = "recently";
-            this.label_confirmation7.Click += new System.EventHandler(this.label1_Click);
             // 
             // progressBar
             // 
@@ -340,7 +325,6 @@ namespace ContactTracing
             this.confirmbx_dropdown.Name = "confirmbx_dropdown";
             this.confirmbx_dropdown.Size = new System.Drawing.Size(244, 23);
             this.confirmbx_dropdown.TabIndex = 5;
-            this.confirmbx_dropdown.SelectedIndexChanged += new System.EventHandler(this.combox_selection);
             // 
             // ContactTracing_form
             // 
