@@ -21,7 +21,7 @@ namespace ContactTracing
         private void enter_btn_Click(object sender, EventArgs e)
         {
             ImportantInfo(firstName_bx.Text, middleName_bx.Text, surName_bx.Text, byte.Parse(age_bx.Text));
-            string message = "Thank you for filling up"+ firstName_bx.Text + "!";
+            string message = "Thank you for filling up "+ firstName_bx.Text + "!";
             MessageBox.Show(message);
 
         }
@@ -37,11 +37,11 @@ namespace ContactTracing
         {
             StreamWriter outputFile = new StreamWriter(Application.StartupPath + "\\Informations\\" + "customerDetails.txt"); ;
             outputFile.WriteLine(label_name.Text + " " + firstName + " " + middleName + " " + surName);
-            outputFile.WriteLine(label_Age.Text + " " + age_bx.ToString());
-            outputFile.WriteLine(label_phoneNum + " " + phone_bx);
-            outputFile.WriteLine(label_email + " " + email_bx);
-            outputFile.WriteLine(label_add + " " + add_bx);
-            outputFile.WriteLine(label_zipCode + " " + zipCode_bx);
+            outputFile.WriteLine("Age: " + age_bx.ToString());
+            outputFile.WriteLine("Phone Number: " + phone_bx.Text);
+            outputFile.WriteLine("Email: " + email_bx.Text);
+            outputFile.WriteLine("Address: " + add_bx.Text);
+            outputFile.WriteLine("Zip Code: " + zipCode_bx.Text);
             outputFile.WriteLine();
             outputFile.Close();
         }
