@@ -21,6 +21,9 @@ namespace ContactTracing
         private void enter_btn_Click(object sender, EventArgs e)
         {
             ImportantInfo(firstName_bx.Text, middleName_bx.Text, surName_bx.Text, byte.Parse(age_bx.Text));
+            string message = "Thank you for filling up"+ firstName_bx.Text + "!";
+            MessageBox.Show(message);
+
         }
 
         private void ContactTracing_form_Load(object sender, EventArgs e)
