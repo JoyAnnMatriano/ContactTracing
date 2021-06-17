@@ -35,15 +35,23 @@ namespace ContactTracing
 
         private void ImportantInfo(string firstName, string middleName, string surName, byte age)
         {
-            StreamWriter outputFile = new StreamWriter(Application.StartupPath + "\\Informations\\" + "customerDetails.txt"); ;
+            int x = 0;
+            StreamWriter outputFile = File.AppendText("customerDetails.txt");
+            outputFile.WriteLine(DateTime.Now);
+            outputFile.WriteLine("==============================");
             outputFile.WriteLine(label_name.Text + " " + firstName + " " + middleName + " " + surName);
-            outputFile.WriteLine("Age: " + age_bx.ToString());
+            outputFile.WriteLine("Age: " + age);
             outputFile.WriteLine("Phone Number: " + phone_bx.Text);
             outputFile.WriteLine("Email: " + email_bx.Text);
             outputFile.WriteLine("Address: " + add_bx.Text);
             outputFile.WriteLine("Zip Code: " + zipCode_bx.Text);
-            outputFile.WriteLine();
+            outputFile.WriteLine(x+1);
             outputFile.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
