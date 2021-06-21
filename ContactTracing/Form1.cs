@@ -23,6 +23,7 @@ namespace ContactTracing
             ImportantInfo(firstName_bx.Text, middleName_bx.Text, surName_bx.Text, byte.Parse(age_bx.Text));
             string message = "Thank you for filling up "+ firstName_bx.Text + "!";
             MessageBox.Show(message);
+            Application.Exit();
 
         }
 
@@ -47,7 +48,6 @@ namespace ContactTracing
             outputFile.WriteLine("Zip Code: " + zipCode_bx.Text);
             outputFile.Close();
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
