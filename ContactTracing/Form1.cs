@@ -36,16 +36,17 @@ namespace ContactTracing
 
         private void ImportantInfo(string firstName, string middleName, string surName, byte age)
         {
-            int x = 0;
             StreamWriter outputFile = File.AppendText("customerDetails.txt");
             outputFile.WriteLine(DateTime.Now);
-            outputFile.WriteLine("Customer No.: " + x+1 +"==============================");
+            outputFile.WriteLine("======================================================");
             outputFile.WriteLine(label_name.Text + " " + firstName + " " + middleName + " " + surName);
             outputFile.WriteLine("Age: " + age);
             outputFile.WriteLine("Phone Number: " + phone_bx.Text);
             outputFile.WriteLine("Email: " + email_bx.Text);
             outputFile.WriteLine("Address: " + add_bx.Text);
             outputFile.WriteLine("Zip Code: " + zipCode_bx.Text);
+            outputFile.WriteLine($"Customer not experiencing any COVID 19 symptoms: {confirmbx_dropdown.Items}");
+            outputFile.WriteLine("=======================================================");
             outputFile.Close();
         }
         private void label1_Click(object sender, EventArgs e)
