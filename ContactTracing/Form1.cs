@@ -38,6 +38,10 @@ namespace ContactTracing
             travel_options.Items.Add("Yes");
             travel_options.Items.Add("No");
 
+            sex_options.Items.Add("Female");
+            sex_options.Items.Add("Male");
+            sex_options.Items.Add("prefer not to say")
+
 
         }
 
@@ -51,7 +55,7 @@ namespace ContactTracing
             outputFile.WriteLine("Phone Number: " + phone_bx.Text);
             outputFile.WriteLine("Email: " + email_bx.Text);
             outputFile.WriteLine("Address: " + add_bx.Text);
-            outputFile.WriteLine("Zip Code: " + zipCode_bx.Text);
+            outputFile.WriteLine($"Sex: {sex_options.SelectedItem});
             outputFile.WriteLine($"Travelled: {travel_options.SelectedItem}");
             outputFile.WriteLine($"Place(s): {place_trvl_bx}");
             outputFile.WriteLine($"Customer not experiencing any COVID 19 symptoms: {confirmbx_dropdown.SelectedItem}");
@@ -80,6 +84,23 @@ namespace ContactTracing
 
         private void confirmbx_dropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void checkBox()
+        {
+            if (surName_bx.Text == "" || firstName_bx.Text == "")
+            {
+                MessageBox.Show("Please input your complete name");
+            }
+            else if (age_bx.Text == "" || phone_bx.Text == "" || add_bx.Text == "" || )
+            {
+                MessageBox.Show("Please input all the required fields");
+            }
+        }
+
+        private void label_confirmation6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
