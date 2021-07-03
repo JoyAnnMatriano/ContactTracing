@@ -57,7 +57,11 @@ namespace ContactTracing
             this.label_confirmation6 = new System.Windows.Forms.Label();
             this.label_confirmation7 = new System.Windows.Forms.Label();
             this.bg_color = new System.Windows.Forms.Panel();
+            this.place_trvl = new System.Windows.Forms.Label();
+            this.travel_options = new System.Windows.Forms.ComboBox();
             this.confirmbx_dropdown = new System.Windows.Forms.ComboBox();
+            this.place_trvl_bx = new System.Windows.Forms.TextBox();
+            this.travel_lbl = new System.Windows.Forms.Label();
             this.bg_color.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,7 +124,7 @@ namespace ContactTracing
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label1.Location = new System.Drawing.Point(124, 142);
+            this.label1.Location = new System.Drawing.Point(128, 142);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 15);
             this.label1.TabIndex = 3;
@@ -131,7 +135,7 @@ namespace ContactTracing
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label2.Location = new System.Drawing.Point(261, 142);
+            this.label2.Location = new System.Drawing.Point(260, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 15);
             this.label2.TabIndex = 3;
@@ -298,12 +302,15 @@ namespace ContactTracing
             // bg_color
             // 
             this.bg_color.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.bg_color.Controls.Add(this.place_trvl);
             this.bg_color.Controls.Add(this.label_zipCode);
             this.bg_color.Controls.Add(this.label3);
+            this.bg_color.Controls.Add(this.travel_options);
             this.bg_color.Controls.Add(this.confirmbx_dropdown);
             this.bg_color.Controls.Add(this.label2);
             this.bg_color.Controls.Add(this.label1);
             this.bg_color.Controls.Add(this.label_name);
+            this.bg_color.Controls.Add(this.place_trvl_bx);
             this.bg_color.Controls.Add(this.zipCode_bx);
             this.bg_color.Controls.Add(this.submit_btn);
             this.bg_color.Controls.Add(this.firstName_bx);
@@ -311,6 +318,7 @@ namespace ContactTracing
             this.bg_color.Controls.Add(this.add_bx);
             this.bg_color.Controls.Add(this.label_phoneNum);
             this.bg_color.Controls.Add(this.email_bx);
+            this.bg_color.Controls.Add(this.travel_lbl);
             this.bg_color.Controls.Add(this.label_add);
             this.bg_color.Controls.Add(this.surName_bx);
             this.bg_color.Controls.Add(this.label_email);
@@ -319,22 +327,59 @@ namespace ContactTracing
             this.bg_color.Controls.Add(this.age_bx);
             this.bg_color.Location = new System.Drawing.Point(0, 2);
             this.bg_color.Name = "bg_color";
-            this.bg_color.Size = new System.Drawing.Size(568, 583);
+            this.bg_color.Size = new System.Drawing.Size(566, 583);
             this.bg_color.TabIndex = 6;
+            // 
+            // place_trvl
+            // 
+            this.place_trvl.AutoSize = true;
+            this.place_trvl.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.place_trvl.Location = new System.Drawing.Point(353, 305);
+            this.place_trvl.Name = "place_trvl";
+            this.place_trvl.Size = new System.Drawing.Size(46, 15);
+            this.place_trvl.TabIndex = 3;
+            this.place_trvl.Text = "Where?";
+            // 
+            // travel_options
+            // 
+            this.travel_options.FormattingEnabled = true;
+            this.travel_options.Location = new System.Drawing.Point(246, 302);
+            this.travel_options.Name = "travel_options";
+            this.travel_options.Size = new System.Drawing.Size(101, 23);
+            this.travel_options.TabIndex = 5;
+            this.travel_options.SelectedIndexChanged += new System.EventHandler(this.travel_options_SelectedIndexChanged);
             // 
             // confirmbx_dropdown
             // 
             this.confirmbx_dropdown.FormattingEnabled = true;
-            this.confirmbx_dropdown.Location = new System.Drawing.Point(208, 346);
+            this.confirmbx_dropdown.Location = new System.Drawing.Point(246, 353);
             this.confirmbx_dropdown.Name = "confirmbx_dropdown";
-            this.confirmbx_dropdown.Size = new System.Drawing.Size(244, 23);
+            this.confirmbx_dropdown.Size = new System.Drawing.Size(101, 23);
             this.confirmbx_dropdown.TabIndex = 5;
+            this.confirmbx_dropdown.SelectedIndexChanged += new System.EventHandler(this.confirmbx_dropdown_SelectedIndexChanged);
+            // 
+            // place_trvl_bx
+            // 
+            this.place_trvl_bx.Location = new System.Drawing.Point(405, 302);
+            this.place_trvl_bx.Name = "place_trvl_bx";
+            this.place_trvl_bx.Size = new System.Drawing.Size(85, 23);
+            this.place_trvl_bx.TabIndex = 2;
+            // 
+            // travel_lbl
+            // 
+            this.travel_lbl.AutoSize = true;
+            this.travel_lbl.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.travel_lbl.Location = new System.Drawing.Point(42, 302);
+            this.travel_lbl.Name = "travel_lbl";
+            this.travel_lbl.Size = new System.Drawing.Size(181, 15);
+            this.travel_lbl.TabIndex = 3;
+            this.travel_lbl.Text = "Did you travel in the last 14 days?";
             // 
             // ContactTracing_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 587);
+            this.ClientSize = new System.Drawing.Size(566, 553);
             this.Controls.Add(this.label_confirmation7);
             this.Controls.Add(this.label_confirmation6);
             this.Controls.Add(this.label_confirmation5);
@@ -386,6 +431,10 @@ namespace ContactTracing
         private System.Windows.Forms.Label label_confirmation7;
         private System.Windows.Forms.Panel bg_color;
         private System.Windows.Forms.ComboBox confirmbx_dropdown;
+        private System.Windows.Forms.ComboBox travel_options;
+        private System.Windows.Forms.Label travel_lbl;
+        private System.Windows.Forms.Label place_trvl;
+        private System.Windows.Forms.TextBox place_trvl_bx;
     }
 }
 

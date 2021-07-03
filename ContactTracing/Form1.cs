@@ -16,6 +16,8 @@ namespace ContactTracing
         public ContactTracing_form()
         {
             InitializeComponent();
+            place_trvl.Visible = false;
+            place_trvl_bx.Visible = false;
         }
 
         private void enter_btn_Click(object sender, EventArgs e)
@@ -32,6 +34,11 @@ namespace ContactTracing
             confirmbx_dropdown.Items.Add("Yes");
             confirmbx_dropdown.Items.Add("No");
             confirmbx_dropdown.Items.Add("I am not sure");
+
+            travel_options.Items.Add("Yes");
+            travel_options.Items.Add("No");
+
+
         }
 
         private void ImportantInfo(string firstName, string middleName, string surName, byte age)
@@ -45,13 +52,34 @@ namespace ContactTracing
             outputFile.WriteLine("Email: " + email_bx.Text);
             outputFile.WriteLine("Address: " + add_bx.Text);
             outputFile.WriteLine("Zip Code: " + zipCode_bx.Text);
-            outputFile.WriteLine($"Customer not experiencing any COVID 19 symptoms: {confirmbx_dropdown.Items}");
+            outputFile.WriteLine($"Travelled: {travel_options.SelectedItem}");
+            outputFile.WriteLine($"Place(s): {place_trvl_bx}");
+            outputFile.WriteLine($"Customer not experiencing any COVID 19 symptoms: {confirmbx_dropdown.SelectedItem}");
             outputFile.WriteLine("=======================================================");
             outputFile.Close();
         }
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void travel_options_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (travel_options.SelectedItem == "Yes")
+            {
+                place_trvl.Visible = true;
+                place_trvl_bx.Visible = true;
+            }
+            else
+            {
+                place_trvl.Visible = false;
+                place_trvl_bx.Visible = false;
+            }
+        }
+
+        private void confirmbx_dropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }
