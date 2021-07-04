@@ -40,7 +40,7 @@ namespace ContactTracing
 
             sex_options.Items.Add("Female");
             sex_options.Items.Add("Male");
-            sex_options.Items.Add("prefer not to say")
+            sex_options.Items.Add("prefer not to say");
 
 
         }
@@ -55,9 +55,9 @@ namespace ContactTracing
             outputFile.WriteLine("Phone Number: " + phone_bx.Text);
             outputFile.WriteLine("Email: " + email_bx.Text);
             outputFile.WriteLine("Address: " + add_bx.Text);
-            outputFile.WriteLine($"Sex: {sex_options.SelectedItem});
-            outputFile.WriteLine($"Travelled: {travel_options.SelectedItem}");
-            outputFile.WriteLine($"Place(s): {place_trvl_bx}");
+            outputFile.WriteLine($"Sex: {sex_options.SelectedItem}");
+            outputFile.WriteLine($"Did the customer travelled?: {travel_options.SelectedItem}");
+            outputFile.WriteLine($"Place(s): {place_trvl_bx.Text}");
             outputFile.WriteLine($"Customer not experiencing any COVID 19 symptoms: {confirmbx_dropdown.SelectedItem}");
             outputFile.WriteLine("=======================================================");
             outputFile.Close();
@@ -92,7 +92,7 @@ namespace ContactTracing
             {
                 MessageBox.Show("Please input your complete name");
             }
-            else if (age_bx.Text == "" || phone_bx.Text == "" || add_bx.Text == "" || )
+            else if (age_bx.Text == "" || phone_bx.Text == "" || add_bx.Text == "")
             {
                 MessageBox.Show("Please input all the required fields");
             }
