@@ -8,19 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
 namespace ContactTracing
 {
     public partial class ContactTracing_form : Form
     {
         public ContactTracing_form()
         {
-            submit_btn.Enabled = false;
             InitializeComponent();
             place_trvl.Visible = false;
             place_trvl_bx.Visible = false;
         }
-
         private void enter_btn_Click(object sender, EventArgs e)
         {
             ImportantInfo(firstName_bx.Text, middleName_bx.Text, surName_bx.Text, byte.Parse(age_bx.Text));
@@ -29,7 +26,6 @@ namespace ContactTracing
             Application.Exit();
 
         }
-
         private void ContactTracing_form_Load(object sender, EventArgs e)
         {
             travel_options.Items.Add("Yes");
@@ -39,7 +35,6 @@ namespace ContactTracing
             sex_options.Items.Add("Male");
             sex_options.Items.Add("prefer not to say");
         }
-
         private void ImportantInfo(string firstName, string middleName, string surName, byte age)
         {
             StreamWriter outputFile = File.AppendText("customerDetails.txt");
@@ -88,6 +83,18 @@ namespace ContactTracing
                 checkBox_confirm.ForeColor = Color.Red;
             }
         }
-
+        private void view_btn_click(object sender, EventArgs e)
+        {
+            MessageBox.Show(String.Join(Environment.NewLine,
+                                                     label_name.Text + " " + firstName_bx + " " + middleName_bx + " " + surName_bx,
+                                                     "Age: " + age_bx,
+                                                     "Phone Number: " + phone_bx.Text,
+                                                     "Email: " + email_bx.Text,
+                                                     "Address: " + add_bx.Text,
+                                                     $"Sex: {sex_options.SelectedItem}",
+                                                     $"Did the customer travelled?: {travel_options.SelectedItem}",
+                                                     $"Place(s): {place_trvl_bx.Text}",
+                                                     "Customer not experiencing any COVID 19 symptoms: Checked"));
+        }
     }
 }

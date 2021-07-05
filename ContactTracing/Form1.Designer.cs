@@ -56,6 +56,7 @@ namespace ContactTracing
             this.label_confirmation6 = new System.Windows.Forms.Label();
             this.label_confirmation7 = new System.Windows.Forms.Label();
             this.bg_color = new System.Windows.Forms.Panel();
+            this.checkBox_confirm = new System.Windows.Forms.CheckBox();
             this.title_lbl = new System.Windows.Forms.Label();
             this.sex_options = new System.Windows.Forms.ComboBox();
             this.place_trvl = new System.Windows.Forms.Label();
@@ -65,14 +66,14 @@ namespace ContactTracing
             this.temp_bx = new System.Windows.Forms.TextBox();
             this.title2_lbl = new System.Windows.Forms.Label();
             this.temp_lbl = new System.Windows.Forms.Label();
-            this.checkBox_confirm = new System.Windows.Forms.CheckBox();
+            this.view_btn = new System.Windows.Forms.Button();
             this.bg_color.SuspendLayout();
             this.SuspendLayout();
             // 
             // submit_btn
             // 
             this.submit_btn.BackColor = System.Drawing.Color.FloralWhite;
-            this.submit_btn.Location = new System.Drawing.Point(183, 401);
+            this.submit_btn.Location = new System.Drawing.Point(275, 409);
             this.submit_btn.Name = "submit_btn";
             this.submit_btn.Size = new System.Drawing.Size(215, 49);
             this.submit_btn.TabIndex = 0;
@@ -100,7 +101,7 @@ namespace ContactTracing
             // 
             this.age_bx.Location = new System.Drawing.Point(97, 166);
             this.age_bx.Name = "age_bx";
-            this.age_bx.Size = new System.Drawing.Size(54, 23);
+            this.age_bx.Size = new System.Drawing.Size(39, 23);
             this.age_bx.TabIndex = 2;
             // 
             // label_name
@@ -179,15 +180,15 @@ namespace ContactTracing
             this.label_phoneNum.AutoSize = true;
             this.label_phoneNum.BackColor = System.Drawing.Color.Transparent;
             this.label_phoneNum.ForeColor = System.Drawing.Color.White;
-            this.label_phoneNum.Location = new System.Drawing.Point(253, 211);
+            this.label_phoneNum.Location = new System.Drawing.Point(283, 249);
             this.label_phoneNum.Name = "label_phoneNum";
-            this.label_phoneNum.Size = new System.Drawing.Size(91, 15);
+            this.label_phoneNum.Size = new System.Drawing.Size(54, 15);
             this.label_phoneNum.TabIndex = 3;
-            this.label_phoneNum.Text = "Phone Number:";
+            this.label_phoneNum.Text = "Phone #:";
             // 
             // phone_bx
             // 
-            this.phone_bx.Location = new System.Drawing.Point(345, 208);
+            this.phone_bx.Location = new System.Drawing.Point(345, 246);
             this.phone_bx.Name = "phone_bx";
             this.phone_bx.Size = new System.Drawing.Size(145, 23);
             this.phone_bx.TabIndex = 2;
@@ -208,7 +209,7 @@ namespace ContactTracing
             // 
             this.email_bx.Location = new System.Drawing.Point(97, 245);
             this.email_bx.Name = "email_bx";
-            this.email_bx.Size = new System.Drawing.Size(393, 23);
+            this.email_bx.Size = new System.Drawing.Size(177, 23);
             this.email_bx.TabIndex = 2;
             // 
             // label_add
@@ -227,7 +228,7 @@ namespace ContactTracing
             // 
             this.add_bx.Location = new System.Drawing.Point(97, 203);
             this.add_bx.Name = "add_bx";
-            this.add_bx.Size = new System.Drawing.Size(150, 23);
+            this.add_bx.Size = new System.Drawing.Size(393, 23);
             this.add_bx.TabIndex = 2;
             // 
             // label_gender
@@ -236,7 +237,7 @@ namespace ContactTracing
             this.label_gender.BackColor = System.Drawing.Color.Transparent;
             this.label_gender.Font = new System.Drawing.Font("Orator Std", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_gender.ForeColor = System.Drawing.Color.White;
-            this.label_gender.Location = new System.Drawing.Point(155, 168);
+            this.label_gender.Location = new System.Drawing.Point(140, 166);
             this.label_gender.Name = "label_gender";
             this.label_gender.Size = new System.Drawing.Size(50, 21);
             this.label_gender.TabIndex = 3;
@@ -343,6 +344,7 @@ namespace ContactTracing
             this.bg_color.Controls.Add(this.firstname_lbl);
             this.bg_color.Controls.Add(this.surname_lbl);
             this.bg_color.Controls.Add(this.place_trvl_bx);
+            this.bg_color.Controls.Add(this.view_btn);
             this.bg_color.Controls.Add(this.submit_btn);
             this.bg_color.Controls.Add(this.firstName_bx);
             this.bg_color.Controls.Add(this.phone_bx);
@@ -365,6 +367,16 @@ namespace ContactTracing
             this.bg_color.Size = new System.Drawing.Size(522, 484);
             this.bg_color.TabIndex = 6;
             // 
+            // checkBox_confirm
+            // 
+            this.checkBox_confirm.AutoSize = true;
+            this.checkBox_confirm.ForeColor = System.Drawing.Color.White;
+            this.checkBox_confirm.Location = new System.Drawing.Point(97, 346);
+            this.checkBox_confirm.Name = "checkBox_confirm";
+            this.checkBox_confirm.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_confirm.TabIndex = 8;
+            this.checkBox_confirm.UseVisualStyleBackColor = true;
+            // 
             // title_lbl
             // 
             this.title_lbl.AutoSize = true;
@@ -380,9 +392,9 @@ namespace ContactTracing
             // sex_options
             // 
             this.sex_options.FormattingEnabled = true;
-            this.sex_options.Location = new System.Drawing.Point(196, 166);
+            this.sex_options.Location = new System.Drawing.Point(183, 166);
             this.sex_options.Name = "sex_options";
-            this.sex_options.Size = new System.Drawing.Size(89, 23);
+            this.sex_options.Size = new System.Drawing.Size(102, 23);
             this.sex_options.TabIndex = 6;
             // 
             // place_trvl
@@ -425,9 +437,9 @@ namespace ContactTracing
             // 
             // temp_bx
             // 
-            this.temp_bx.Location = new System.Drawing.Point(393, 169);
+            this.temp_bx.Location = new System.Drawing.Point(438, 169);
             this.temp_bx.Name = "temp_bx";
-            this.temp_bx.Size = new System.Drawing.Size(97, 23);
+            this.temp_bx.Size = new System.Drawing.Size(52, 23);
             this.temp_bx.TabIndex = 2;
             // 
             // title2_lbl
@@ -446,23 +458,24 @@ namespace ContactTracing
             // 
             this.temp_lbl.AutoSize = true;
             this.temp_lbl.BackColor = System.Drawing.Color.Transparent;
-            this.temp_lbl.Font = new System.Drawing.Font("Orator Std", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.temp_lbl.Font = new System.Drawing.Font("Orator Std", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.temp_lbl.ForeColor = System.Drawing.Color.White;
-            this.temp_lbl.Location = new System.Drawing.Point(293, 171);
+            this.temp_lbl.Location = new System.Drawing.Point(302, 169);
             this.temp_lbl.Name = "temp_lbl";
-            this.temp_lbl.Size = new System.Drawing.Size(104, 17);
+            this.temp_lbl.Size = new System.Drawing.Size(130, 21);
             this.temp_lbl.TabIndex = 3;
             this.temp_lbl.Text = "Temperature:";
             // 
-            // checkBox_confirm
+            // view_btn
             // 
-            this.checkBox_confirm.AutoSize = true;
-            this.checkBox_confirm.ForeColor = System.Drawing.Color.White;
-            this.checkBox_confirm.Location = new System.Drawing.Point(97, 346);
-            this.checkBox_confirm.Name = "checkBox_confirm";
-            this.checkBox_confirm.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_confirm.TabIndex = 8;
-            this.checkBox_confirm.UseVisualStyleBackColor = true;
+            this.view_btn.BackColor = System.Drawing.Color.FloralWhite;
+            this.view_btn.Location = new System.Drawing.Point(43, 409);
+            this.view_btn.Name = "view_btn";
+            this.view_btn.Size = new System.Drawing.Size(215, 49);
+            this.view_btn.TabIndex = 0;
+            this.view_btn.Text = "View Data";
+            this.view_btn.UseVisualStyleBackColor = false;
+            this.view_btn.Click += new System.EventHandler(this.view_btn_click);
             // 
             // ContactTracing_form
             // 
@@ -519,6 +532,7 @@ namespace ContactTracing
         private System.Windows.Forms.Label title2_lbl;
         private System.Windows.Forms.Label temp_lbl;
         private System.Windows.Forms.CheckBox checkBox_confirm;
+        private System.Windows.Forms.Button view_btn;
     }
 }
 
