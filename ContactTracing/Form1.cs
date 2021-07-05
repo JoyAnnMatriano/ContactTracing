@@ -15,6 +15,7 @@ namespace ContactTracing
     {
         public ContactTracing_form()
         {
+            submit_btn.Enabled = false;
             InitializeComponent();
             place_trvl.Visible = false;
             place_trvl_bx.Visible = false;
@@ -31,18 +32,12 @@ namespace ContactTracing
 
         private void ContactTracing_form_Load(object sender, EventArgs e)
         {
-            confirmbx_dropdown.Items.Add("Yes");
-            confirmbx_dropdown.Items.Add("No");
-            confirmbx_dropdown.Items.Add("I am not sure");
-
             travel_options.Items.Add("Yes");
             travel_options.Items.Add("No");
 
             sex_options.Items.Add("Female");
             sex_options.Items.Add("Male");
             sex_options.Items.Add("prefer not to say");
-
-
         }
 
         private void ImportantInfo(string firstName, string middleName, string surName, byte age)
@@ -58,18 +53,12 @@ namespace ContactTracing
             outputFile.WriteLine($"Sex: {sex_options.SelectedItem}");
             outputFile.WriteLine($"Did the customer travelled?: {travel_options.SelectedItem}");
             outputFile.WriteLine($"Place(s): {place_trvl_bx.Text}");
-            outputFile.WriteLine($"Customer not experiencing any COVID 19 symptoms: {confirmbx_dropdown.SelectedItem}");
+            outputFile.WriteLine("Customer not experiencing any COVID 19 symptoms: Checked");
             outputFile.WriteLine("=======================================================");
             outputFile.Close();
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void travel_options_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (travel_options.SelectedItem == "Yes")
             {
                 place_trvl.Visible = true;
@@ -81,11 +70,9 @@ namespace ContactTracing
                 place_trvl_bx.Visible = false;
             }
         }
-
         private void confirmbx_dropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-
         private void checkBox()
         {
             if (surName_bx.Text == "" || firstName_bx.Text == "")
@@ -96,11 +83,11 @@ namespace ContactTracing
             {
                 MessageBox.Show("Please input all the required fields");
             }
+            else if (checkBox_confirm.CheckState == CheckState.Indeterminate)
+            {
+                checkBox_confirm.ForeColor = Color.Red;
+            }
         }
 
-        private void label_confirmation6_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
