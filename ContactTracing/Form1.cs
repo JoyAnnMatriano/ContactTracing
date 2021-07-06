@@ -19,31 +19,13 @@ namespace ContactTracing
             place_trvl_bx.Visible = false;
 
             submit_btn.Enabled = false;
-
-            if (firstName_bx.Text == "" || middleName_bx.Text == "" || surName_bx.Text == "" || age_bx.Text == "" || sex_options.SelectedItem == null || temp_bx.Text == "" ||
-                add_bx.Text == "" || phone_bx.Text == "" || travel_options.SelectedItem == null || checkBox_confirm == null)
-                {
-                if (travel_options.SelectedItem == "No")
-                {
-                    submit_btn.Enabled
-                }
-                else if (travel_options.SelectedItem == "Yes")
-                {
-                    if (place_trvl_bx.Text == "")
-                    {
-                        submit_btn.Enabled = false;
-                    }
-                }
-                else
-                {
-                    submit_btn.Enabled = true;
-                }
-            }
         }
         private void enter_btn_Click(object sender, EventArgs e)
         {
             ImportantInfo(firstName_bx.Text, middleName_bx.Text, surName_bx.Text, byte.Parse(age_bx.Text));
-            dataCompleted();
+            EnableSubmitbtn();
+           
+            dataCompleted_message();
         }
         private void ContactTracing_form_Load(object sender, EventArgs e)
         {
@@ -104,7 +86,12 @@ namespace ContactTracing
         }
         private void view_btn_click(object sender, EventArgs e)
         {
-            MessageBox.Show(String.Join(Environment.NewLine,
+            view_btn.Enabled = false;
+
+            if (checkBox_confirm.CheckState == CheckState.Checked)
+            {
+                view_btn.Enabled = true;
+                MessageBox.Show(String.Join(Environment.NewLine,
                                                      label_name.Text + " " + (firstName_bx).Text + " " + (middleName_bx).Text + " " + (surName_bx).Text,
                                                      "Age: " + (age_bx).Text,
                                                      "Phone Number: " + phone_bx.Text,
@@ -114,12 +101,41 @@ namespace ContactTracing
                                                      $"Did the customer travelled?: {travel_options.SelectedItem}",
                                                      $"Place(s): {place_trvl_bx.Text}",
                                                      "Customer not experiencing any COVID 19 symptoms: Checked"));
+            }
+            else
+            {
+                view_btn.Enabled = false;
+            }
         }
-        private void dataCompleted()
+        private void dataCompleted_message()
         {
             string message = "Thank you for filling up " + firstName_bx.Text + "!";
             MessageBox.Show(message);
             Application.Exit();
+        }
+
+        private void EnableSubmitbtn()
+        {
+            //all necesaary box is not filled up
+            if (firstName_bx.Text != String.Empty || middleName_bx.Text != String.Empty || surName_bx.Text != String.Empty || age_bx.Text != String.Empty || sex_options.SelectedItem != null || temp_bx.Text != String.Empty ||
+                add_bx.Text != String.Empty || phone_bx.Text != String.Empty || travel_options.SelectedItem != null || checkBox_confirm != null)
+            {
+                if (travel_options.SelectedItem == "No") //will NOT see if the place travel is empty
+                {
+                    submit_btn.Enabled = true;
+                }
+                else if (travel_options.SelectedItem == "Yes") //will see if the place travel is empty
+                {
+                    if (place_trvl_bx.Text != String.Empty)
+                    {
+                        submit_btn.Enabled = true;
+                    }
+                }
+                else
+                {
+                    submit_btn.Enabled = false;
+                }
+            }
         }
     }
 }

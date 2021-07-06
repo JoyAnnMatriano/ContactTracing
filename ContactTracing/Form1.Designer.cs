@@ -62,11 +62,11 @@ namespace ContactTracing
             this.place_trvl = new System.Windows.Forms.Label();
             this.travel_options = new System.Windows.Forms.ComboBox();
             this.place_trvl_bx = new System.Windows.Forms.TextBox();
+            this.view_btn = new System.Windows.Forms.Button();
             this.travel_lbl = new System.Windows.Forms.Label();
             this.temp_bx = new System.Windows.Forms.TextBox();
             this.title2_lbl = new System.Windows.Forms.Label();
             this.temp_lbl = new System.Windows.Forms.Label();
-            this.view_btn = new System.Windows.Forms.Button();
             this.bg_color.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -424,6 +424,17 @@ namespace ContactTracing
             this.place_trvl_bx.Size = new System.Drawing.Size(145, 23);
             this.place_trvl_bx.TabIndex = 2;
             // 
+            // view_btn
+            // 
+            this.view_btn.BackColor = System.Drawing.Color.FloralWhite;
+            this.view_btn.Location = new System.Drawing.Point(43, 409);
+            this.view_btn.Name = "view_btn";
+            this.view_btn.Size = new System.Drawing.Size(215, 49);
+            this.view_btn.TabIndex = 0;
+            this.view_btn.Text = "View Data";
+            this.view_btn.UseVisualStyleBackColor = false;
+            this.view_btn.Click += new System.EventHandler(this.view_btn_click);
+            // 
             // travel_lbl
             // 
             this.travel_lbl.AutoSize = true;
@@ -465,17 +476,6 @@ namespace ContactTracing
             this.temp_lbl.Size = new System.Drawing.Size(130, 21);
             this.temp_lbl.TabIndex = 3;
             this.temp_lbl.Text = "Temperature:";
-            // 
-            // view_btn
-            // 
-            this.view_btn.BackColor = System.Drawing.Color.FloralWhite;
-            this.view_btn.Location = new System.Drawing.Point(43, 409);
-            this.view_btn.Name = "view_btn";
-            this.view_btn.Size = new System.Drawing.Size(215, 49);
-            this.view_btn.TabIndex = 0;
-            this.view_btn.Text = "View Data";
-            this.view_btn.UseVisualStyleBackColor = false;
-            this.view_btn.Click += new System.EventHandler(this.view_btn_click);
             // 
             // ContactTracing_form
             // 
