@@ -17,32 +17,33 @@ namespace ContactTracing
             InitializeComponent();
             place_trvl.Visible = false;
             place_trvl_bx.Visible = false;
-        }
-        private void enter_btn_Click(object sender, EventArgs e)
-        {
-            ImportantInfo(firstName_bx.Text, middleName_bx.Text, surName_bx.Text, byte.Parse(age_bx.Text));
-            if (travel_options.SelectedItem == "No")
+
+            submit_btn.Enabled = false;
+
+            if (firstName_bx.Text == "" || middleName_bx.Text == "" || surName_bx.Text == "" || age_bx.Text == "" || sex_options.SelectedItem == null || temp_bx.Text == "" ||
+                add_bx.Text == "" || phone_bx.Text == "" || travel_options.SelectedItem == null || checkBox_confirm == null)
                 {
-                    submit_important();
+                if (travel_options.SelectedItem == "No")
+                {
+                    submit_btn.Enabled
                 }
-            else if (travel_options.SelectedItem == "Yes")
-            {
-                if (place_trvl_bx.Text == "")
+                else if (travel_options.SelectedItem == "Yes")
                 {
-                    submit_important();
+                    if (place_trvl_bx.Text == "")
+                    {
+                        submit_btn.Enabled = false;
+                    }
                 }
                 else
                 {
                     submit_btn.Enabled = true;
-                    dataCompleted();
                 }
             }
-            else
-            {
-                submit_btn.Enabled = true;
-                dataCompleted();
-            }
-
+        }
+        private void enter_btn_Click(object sender, EventArgs e)
+        {
+            ImportantInfo(firstName_bx.Text, middleName_bx.Text, surName_bx.Text, byte.Parse(age_bx.Text));
+            dataCompleted();
         }
         private void ContactTracing_form_Load(object sender, EventArgs e)
         {
@@ -114,21 +115,6 @@ namespace ContactTracing
                                                      $"Place(s): {place_trvl_bx.Text}",
                                                      "Customer not experiencing any COVID 19 symptoms: Checked"));
         }
-
-        private void submit_important()
-        {
-            if (firstName_bx.Text == "" || middleName_bx.Text == "" || surName_bx.Text == "" || age_bx.Text == "" || sex_options.SelectedItem == null || temp_bx.Text == "" ||
-                add_bx.Text == "" || phone_bx.Text == "" || travel_options.SelectedItem == null || checkBox_confirm == null)
-            {
-                submit_btn.Enabled = false;
-            }
-            else
-            {
-                submit_btn.Enabled = true;
-                dataCompleted();
-            }
-        }
-
         private void dataCompleted()
         {
             string message = "Thank you for filling up " + firstName_bx.Text + "!";
