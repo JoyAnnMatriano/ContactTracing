@@ -24,7 +24,7 @@ namespace ContactTracing
         {
             ImportantInfo(firstName_bx.Text, middleName_bx.Text, surName_bx.Text, byte.Parse(age_bx.Text));
             EnableSubmitbtn();
-           
+
             dataCompleted_message();
         }
         private void ContactTracing_form_Load(object sender, EventArgs e)
@@ -65,9 +65,6 @@ namespace ContactTracing
                 place_trvl.Visible = false;
                 place_trvl_bx.Visible = false;
             }
-        }
-        private void confirmbx_dropdown_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
         private void redHighlight()
         {
@@ -130,12 +127,22 @@ namespace ContactTracing
                     {
                         submit_btn.Enabled = true;
                     }
-                }
-                else
-                {
-                    submit_btn.Enabled = false;
+                    else if (place_trvl_bx.Text == String.Empty)
+                    {
+                        submit_btn.Enabled = false;
+                    }
                 }
             }
+            else
+            {
+                submit_btn.Enabled = false;
+            }
+        }
+
+        private void viewdata_change(object sender, EventArgs e)
+        {
+            EnableSubmitbtn();
         }
     }
 }
+
