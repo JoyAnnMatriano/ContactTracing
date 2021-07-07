@@ -19,6 +19,7 @@ namespace ContactTracing
             place_trvl_bx.Visible = false;
 
             submit_btn.Enabled = false;
+            view_btn.Enabled = false;
         }
         private void enter_btn_Click(object sender, EventArgs e)
         {
@@ -83,12 +84,7 @@ namespace ContactTracing
         }
         private void view_btn_click(object sender, EventArgs e)
         {
-            view_btn.Enabled = false;
-
-            if (checkBox_confirm.CheckState == CheckState.Checked)
-            {
-                view_btn.Enabled = true;
-                MessageBox.Show(String.Join(Environment.NewLine,
+            MessageBox.Show(String.Join(Environment.NewLine,
                                                      label_name.Text + " " + (firstName_bx).Text + " " + (middleName_bx).Text + " " + (surName_bx).Text,
                                                      "Age: " + (age_bx).Text,
                                                      "Phone Number: " + phone_bx.Text,
@@ -98,11 +94,15 @@ namespace ContactTracing
                                                      $"Did the customer travelled?: {travel_options.SelectedItem}",
                                                      $"Place(s): {place_trvl_bx.Text}",
                                                      "Customer not experiencing any COVID 19 symptoms: Checked"));
+            if (checkBox_confirm.CheckState != CheckState.Checked)
+            {
+                view_btn.Enabled = true;
             }
             else
             {
                 view_btn.Enabled = false;
             }
+
         }
         private void dataCompleted_message()
         {
