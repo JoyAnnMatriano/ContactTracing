@@ -391,6 +391,7 @@ namespace ContactTracing
             // 
             // sex_options
             // 
+            this.sex_options.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sex_options.FormattingEnabled = true;
             this.sex_options.Location = new System.Drawing.Point(183, 166);
             this.sex_options.Name = "sex_options";
@@ -410,6 +411,7 @@ namespace ContactTracing
             // 
             // travel_options
             // 
+            this.travel_options.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.travel_options.FormattingEnabled = true;
             this.travel_options.Location = new System.Drawing.Point(230, 291);
             this.travel_options.Name = "travel_options";

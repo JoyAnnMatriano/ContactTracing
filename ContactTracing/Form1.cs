@@ -56,6 +56,7 @@ namespace ContactTracing
         }
         private void travel_options_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (travel_options.SelectedItem == "Yes")
             {
                 place_trvl.Visible = true;
@@ -74,11 +75,11 @@ namespace ContactTracing
             {
                 MessageBox.Show("Please input your complete name");
             }
-            else if (age_bx.Text == "" || phone_bx.Text == "" || add_bx.Text == "")
+            if (age_bx.Text == "" || phone_bx.Text == "" || add_bx.Text == "")
             {
                 MessageBox.Show("Please input all the required fields");
             }
-            else if (checkBox_confirm.CheckState == CheckState.Indeterminate)
+            if (checkBox_confirm.CheckState == CheckState.Indeterminate)
             {
                 checkBox_confirm.ForeColor = Color.Red;
             }
@@ -104,21 +105,29 @@ namespace ContactTracing
 
         private void EnableSubmitbtn()
         {
-            //all necesaary box is not filled up
-            if (travel_options.SelectedItem == "Yes") //will see if the place travel is empty
+            if (checkBox_confirm != null)
             {
-                if (firstName_bx.Text != String.Empty || middleName_bx.Text != String.Empty || surName_bx.Text != String.Empty || age_bx.Text != String.Empty || sex_options.SelectedItem != null || temp_bx.Text != String.Empty ||
-                    add_bx.Text != String.Empty || phone_bx.Text != String.Empty || travel_options.SelectedItem != null || checkBox_confirm != null || place_trvl_bx.Text != String.Empty)
+                //all necesaary box is not filled up
+                if (travel_options.SelectedItem == "Yes") //will see if the place travel is empty
                 {
-                    submit_btn.Enabled = true;
+                    if (place_trvl_bx.Text != "")
+                    {
+                        if (firstName_bx.Text != "" || middleName_bx.Text != "" || surName_bx.Text != "" || age_bx.Text != "" || sex_options.SelectedItem != null || temp_bx.Text != "" ||
+                            add_bx.Text != "" || phone_bx.Text != "" || travel_options.SelectedItem != null)
+                        {
+                            submit_btn.Enabled = true;
+                        }
+                    }
                 }
-            }
-            else if (travel_options.SelectedItem == "No")
-            {
-                if (firstName_bx.Text != String.Empty || middleName_bx.Text != String.Empty || surName_bx.Text != String.Empty || age_bx.Text != String.Empty || sex_options.SelectedItem != null || temp_bx.Text != String.Empty ||
-                    add_bx.Text != String.Empty || phone_bx.Text != String.Empty || travel_options.SelectedItem != null || checkBox_confirm != null)
+                if (travel_options.SelectedItem == "No")
                 {
-                    submit_btn.Enabled = true;
+                    if (firstName_bx.Text != "" || middleName_bx.Text != "" || surName_bx.Text != "" || age_bx.Text != "" || sex_options.SelectedItem != null || temp_bx.Text != "" ||
+                        add_bx.Text != "" || phone_bx.Text != "" || travel_options.SelectedItem != null)
+                    {
+                        submit_btn.Enabled = true;
+                    }
+                    else
+                        submit_btn.Enabled = false;
                 }
             }
         }
