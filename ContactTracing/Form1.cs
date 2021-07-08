@@ -20,6 +20,9 @@ namespace ContactTracing
 
             submit_btn.Enabled = false;
             view_btn.Enabled = false;
+
+            int x = 0;
+            EnableSubmitbtn();
         }
         private void enter_btn_Click(object sender, EventArgs e)
         {
@@ -36,6 +39,8 @@ namespace ContactTracing
             sex_options.Items.Add("Female");
             sex_options.Items.Add("Male");
             sex_options.Items.Add("prefer not to say");
+
+            EnableSubmitbtn();
         }
         private void ImportantInfo(string firstName, string middleName, string surName, byte age)
         {
@@ -66,6 +71,7 @@ namespace ContactTracing
                 place_trvl.Visible = false;
                 place_trvl_bx.Visible = false;
             }
+            EnableSubmitbtn();
         }
         private void redHighlight()
         {
@@ -114,34 +120,30 @@ namespace ContactTracing
         private void EnableSubmitbtn()
         {
             //all necesaary box is not filled up
-            if (firstName_bx.Text != String.Empty || middleName_bx.Text != String.Empty || surName_bx.Text != String.Empty || age_bx.Text != String.Empty || sex_options.SelectedItem != null || temp_bx.Text != String.Empty ||
-                add_bx.Text != String.Empty || phone_bx.Text != String.Empty || travel_options.SelectedItem != null || checkBox_confirm != null)
+            if (travel_options.SelectedItem == "No")
             {
-                if (travel_options.SelectedItem == "No") //will NOT see if the place travel is empty
+                if (firstName_bx.Text != String.Empty || middleName_bx.Text != String.Empty || surName_bx.Text != String.Empty || age_bx.Text != String.Empty || sex_options.SelectedItem != null || temp_bx.Text != String.Empty ||
+                    add_bx.Text != String.Empty || phone_bx.Text != String.Empty || travel_options.SelectedItem != null || checkBox_confirm != null)
                 {
                     submit_btn.Enabled = true;
                 }
-                else if (travel_options.SelectedItem == "Yes") //will see if the place travel is empty
+                else
                 {
-                    if (place_trvl_bx.Text != String.Empty)
-                    {
-                        submit_btn.Enabled = true;
-                    }
-                    else if (place_trvl_bx.Text == String.Empty)
-                    {
-                        submit_btn.Enabled = false;
-                    }
+                    submit_btn.Enabled = false;
                 }
             }
-            else
+            if (travel_options.SelectedItem == "Yes") //will see if the place travel is empty
             {
-                submit_btn.Enabled = false;
+                if (firstName_bx.Text != String.Empty || middleName_bx.Text != String.Empty || surName_bx.Text != String.Empty || age_bx.Text != String.Empty || sex_options.SelectedItem != null || temp_bx.Text != String.Empty ||
+                    add_bx.Text != String.Empty || phone_bx.Text != String.Empty || travel_options.SelectedItem != null || checkBox_confirm != null || place_trvl_bx.Text != String.Empty)
+                {
+                    submit_btn.Enabled = true;
+                }
+                else if (place_trvl_bx.Text == String.Empty)
+                {
+                    submit_btn.Enabled = false;
+                }
             }
-        }
-
-        private void viewdata_change(object sender, EventArgs e)
-        {
-            EnableSubmitbtn();
         }
     }
 }

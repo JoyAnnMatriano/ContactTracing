@@ -433,7 +433,7 @@ namespace ContactTracing
             this.view_btn.TabIndex = 0;
             this.view_btn.Text = "View Data";
             this.view_btn.UseVisualStyleBackColor = false;
-            this.view_btn.EnabledChanged += new System.EventHandler(this.viewdata_change);
+            this.view_btn.EnabledChanged += new System.EventHandler(this.ContactTracing_form_Load);
             this.view_btn.Click += new System.EventHandler(this.view_btn_click);
             // 
             // travel_lbl
