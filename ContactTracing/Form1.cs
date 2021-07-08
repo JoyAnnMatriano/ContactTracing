@@ -20,21 +20,20 @@ namespace ContactTracing
 
             submit_btn.Enabled = false;
             view_btn.Enabled = false;
-
-            int x = 0;
         }
         private void enter_btn_Click(object sender, EventArgs e)
         {
             ImportantInfo(firstName_bx.Text, middleName_bx.Text, surName_bx.Text, byte.Parse(age_bx.Text));
-            EnableSubmitbtn();
 
             dataCompleted_message();
         }
         private void ContactTracing_form_Load(object sender, EventArgs e)
         {
+            travel_options.Items.Clear();
             travel_options.Items.Add("Yes");
             travel_options.Items.Add("No");
 
+            sex_options.Items.Clear();
             sex_options.Items.Add("Female");
             sex_options.Items.Add("Male");
             sex_options.Items.Add("prefer not to say");
@@ -68,6 +67,7 @@ namespace ContactTracing
                 place_trvl.Visible = false;
                 place_trvl_bx.Visible = false;
             }
+            EnableSubmitbtn();
         }
         private void redHighlight()
         {
@@ -107,10 +107,10 @@ namespace ContactTracing
         private void EnableSubmitbtn()
         {
             //all necesaary box is not filled up
-            if (travel_options.SelectedItem == "No")
+            if (travel_options.SelectedItem == "Yes") //will see if the place travel is empty
             {
                 if (firstName_bx.Text != String.Empty || middleName_bx.Text != String.Empty || surName_bx.Text != String.Empty || age_bx.Text != String.Empty || sex_options.SelectedItem != null || temp_bx.Text != String.Empty ||
-                    add_bx.Text != String.Empty || phone_bx.Text != String.Empty || travel_options.SelectedItem != null || checkBox_confirm != null)
+                    add_bx.Text != String.Empty || phone_bx.Text != String.Empty || travel_options.SelectedItem != null || checkBox_confirm != null || place_trvl_bx.Text != String.Empty)
                 {
                     submit_btn.Enabled = true;
                 }
@@ -119,14 +119,14 @@ namespace ContactTracing
                     submit_btn.Enabled = false;
                 }
             }
-            if (travel_options.SelectedItem == "Yes") //will see if the place travel is empty
+            if (travel_options.SelectedItem == "No")
             {
                 if (firstName_bx.Text != String.Empty || middleName_bx.Text != String.Empty || surName_bx.Text != String.Empty || age_bx.Text != String.Empty || sex_options.SelectedItem != null || temp_bx.Text != String.Empty ||
-                    add_bx.Text != String.Empty || phone_bx.Text != String.Empty || travel_options.SelectedItem != null || checkBox_confirm != null || place_trvl_bx.Text != String.Empty)
+                    add_bx.Text != String.Empty || phone_bx.Text != String.Empty || travel_options.SelectedItem != null || checkBox_confirm != null)
                 {
                     submit_btn.Enabled = true;
                 }
-                else if (place_trvl_bx.Text == String.Empty)
+                else
                 {
                     submit_btn.Enabled = false;
                 }
