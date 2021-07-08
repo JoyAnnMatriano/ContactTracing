@@ -19,7 +19,6 @@ namespace ContactTracing
             place_trvl_bx.Visible = false;
 
             submit_btn.Enabled = false;
-            view_btn.Enabled = false;
         }
         private void enter_btn_Click(object sender, EventArgs e)
         {
@@ -50,7 +49,7 @@ namespace ContactTracing
             outputFile.WriteLine("Address: " + add_bx.Text);
             outputFile.WriteLine($"Sex: {sex_options.SelectedItem}");
             outputFile.WriteLine($"Did the customer travelled?: {travel_options.SelectedItem}");
-            outputFile.WriteLine($"Place(s): {place_trvl_bx.Text}");
+            outputFile.WriteLine($"(if YES) Place(s): {place_trvl_bx.Text}");
             outputFile.WriteLine("Customer not experiencing any COVID 19 symptoms: Checked");
             outputFile.WriteLine("=======================================================");
             outputFile.Close();
@@ -94,8 +93,7 @@ namespace ContactTracing
                                                      "Address: " + add_bx.Text,
                                                      $"Sex: {sex_options.SelectedItem}",
                                                      $"Did the customer travelled?: {travel_options.SelectedItem}",
-                                                     $"Place(s): {place_trvl_bx.Text}",
-                                                     "Customer not experiencing any COVID 19 symptoms: Checked"));
+                                                     $"(if YES) Place(s): {place_trvl_bx.Text}"));
         }
         private void dataCompleted_message()
         {
@@ -114,33 +112,14 @@ namespace ContactTracing
                 {
                     submit_btn.Enabled = true;
                 }
-                else
-                {
-                    submit_btn.Enabled = false;
-                }
             }
-            if (travel_options.SelectedItem == "No")
+            else if (travel_options.SelectedItem == "No")
             {
                 if (firstName_bx.Text != String.Empty || middleName_bx.Text != String.Empty || surName_bx.Text != String.Empty || age_bx.Text != String.Empty || sex_options.SelectedItem != null || temp_bx.Text != String.Empty ||
                     add_bx.Text != String.Empty || phone_bx.Text != String.Empty || travel_options.SelectedItem != null || checkBox_confirm != null)
                 {
                     submit_btn.Enabled = true;
                 }
-                else
-                {
-                    submit_btn.Enabled = false;
-                }
-            }
-        }
-        private void EnableViewbtn()
-        {
-            if (checkBox_confirm.CheckState != CheckState.Checked)
-            {
-                view_btn.Enabled = true;
-            }
-            else
-            {
-                view_btn.Enabled = false;
             }
         }
     }
