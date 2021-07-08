@@ -36,6 +36,59 @@ namespace ContactTracing
             sex_options.Items.Add("Female");
             sex_options.Items.Add("Male");
             sex_options.Items.Add("prefer not to say");
+
+            age_bx.Items.Clear();
+            age_bx.Items.Add("15");
+            age_bx.Items.Add("16");
+            age_bx.Items.Add("17");
+            age_bx.Items.Add("18");
+            age_bx.Items.Add("19");
+            age_bx.Items.Add("20");
+            age_bx.Items.Add("21");
+            age_bx.Items.Add("22");
+            age_bx.Items.Add("23");
+            age_bx.Items.Add("24");
+            age_bx.Items.Add("25");
+            age_bx.Items.Add("26");
+            age_bx.Items.Add("27");
+            age_bx.Items.Add("28");
+            age_bx.Items.Add("29");
+            age_bx.Items.Add("30");
+            age_bx.Items.Add("31");
+            age_bx.Items.Add("32");
+            age_bx.Items.Add("33");
+            age_bx.Items.Add("34");
+            age_bx.Items.Add("35");
+            age_bx.Items.Add("36");
+            age_bx.Items.Add("37");
+            age_bx.Items.Add("38");
+            age_bx.Items.Add("39");
+            age_bx.Items.Add("40");
+            age_bx.Items.Add("41");
+            age_bx.Items.Add("42");
+            age_bx.Items.Add("43");
+            age_bx.Items.Add("44");
+            age_bx.Items.Add("45");
+            age_bx.Items.Add("46");
+            age_bx.Items.Add("47");
+            age_bx.Items.Add("48");
+            age_bx.Items.Add("49");
+            age_bx.Items.Add("50");
+            age_bx.Items.Add("51");
+            age_bx.Items.Add("52");
+            age_bx.Items.Add("53");
+            age_bx.Items.Add("54");
+            age_bx.Items.Add("55");
+            age_bx.Items.Add("56");
+            age_bx.Items.Add("57");
+            age_bx.Items.Add("58");
+            age_bx.Items.Add("59");
+            age_bx.Items.Add("60");
+            age_bx.Items.Add("61");
+            age_bx.Items.Add("62");
+            age_bx.Items.Add("63");
+            age_bx.Items.Add("64");
+            age_bx.Items.Add("65");
         }
         private void ImportantInfo(string firstName, string middleName, string surName, byte age)
         {
@@ -43,7 +96,7 @@ namespace ContactTracing
             outputFile.WriteLine(DateTime.Now);
             outputFile.WriteLine("======================================================");
             outputFile.WriteLine(label_name.Text + " " + firstName + " " + middleName + " " + surName);
-            outputFile.WriteLine("Age: " + age);
+            outputFile.WriteLine($"Age: {age_bx.SelectedItem}");
             outputFile.WriteLine("Phone Number: " + phone_bx.Text);
             outputFile.WriteLine("Email: " + email_bx.Text);
             outputFile.WriteLine("Address: " + add_bx.Text);
@@ -88,7 +141,7 @@ namespace ContactTracing
         {
             MessageBox.Show(String.Join(Environment.NewLine,
                                                      label_name.Text + " " + (firstName_bx).Text + " " + (middleName_bx).Text + " " + (surName_bx).Text,
-                                                     "Age: " + (age_bx).Text,
+                                                     $"Age: {age_bx.SelectedItem} ",
                                                      "Phone Number: " + phone_bx.Text,
                                                      "Email: " + email_bx.Text,
                                                      "Address: " + add_bx.Text,
@@ -102,33 +155,47 @@ namespace ContactTracing
             MessageBox.Show(message);
             Application.Exit();
         }
-
         private void EnableSubmitbtn()
         {
-            if (checkBox_confirm != null)
+            if (surName_bx.Text == "")
             {
-                //all necesaary box is not filled up
-                if (travel_options.SelectedItem == "Yes") //will see if the place travel is empty
-                {
-                    if (place_trvl_bx.Text != "")
-                    {
-                        if (firstName_bx.Text != "" || middleName_bx.Text != "" || surName_bx.Text != "" || age_bx.Text != "" || sex_options.SelectedItem != null || temp_bx.Text != "" ||
-                            add_bx.Text != "" || phone_bx.Text != "" || travel_options.SelectedItem != null)
-                        {
-                            submit_btn.Enabled = true;
-                        }
-                    }
-                }
-                if (travel_options.SelectedItem == "No")
-                {
-                    if (firstName_bx.Text != "" || middleName_bx.Text != "" || surName_bx.Text != "" || age_bx.Text != "" || sex_options.SelectedItem != null || temp_bx.Text != "" ||
-                        add_bx.Text != "" || phone_bx.Text != "" || travel_options.SelectedItem != null)
-                    {
-                        submit_btn.Enabled = true;
-                    }
-                    else
-                        submit_btn.Enabled = false;
-                }
+            }
+           
+        }
+        private void count_x()
+        {
+            int x_count = 10;
+            if (surName_bx.Text == "")
+            {
+                --x_count;
+            }
+            if (firstName_bx.Text == "")
+            {
+                --x_count;
+            }
+            if (age_bx.SelectedItem == null)
+            {
+                --x_count;
+            }
+            if (sex_options.SelectedItem == null)
+            {
+                --x_count;
+            }
+            if (temp_bx.Text == "")
+            {
+                --x_count;
+            }
+            if (add_bx.Text == "")
+            {
+                --x_count;
+            }
+            if (phone_bx.Text == "")
+            {
+                --x_count;
+            }
+            if (checkBox_confirm.CheckState == CheckState.Indeterminate)
+            {
+                --x_count;
             }
         }
     }

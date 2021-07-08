@@ -33,7 +33,6 @@ namespace ContactTracing
             this.submit_btn = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.surName_bx = new System.Windows.Forms.TextBox();
-            this.age_bx = new System.Windows.Forms.TextBox();
             this.label_name = new System.Windows.Forms.Label();
             this.firstName_bx = new System.Windows.Forms.TextBox();
             this.middleName_bx = new System.Windows.Forms.TextBox();
@@ -56,6 +55,8 @@ namespace ContactTracing
             this.label_confirmation6 = new System.Windows.Forms.Label();
             this.label_confirmation7 = new System.Windows.Forms.Label();
             this.bg_color = new System.Windows.Forms.Panel();
+            this.age_bx = new System.Windows.Forms.ComboBox();
+            this.optional_email = new System.Windows.Forms.Label();
             this.checkBox_confirm = new System.Windows.Forms.CheckBox();
             this.title_lbl = new System.Windows.Forms.Label();
             this.sex_options = new System.Windows.Forms.ComboBox();
@@ -67,6 +68,7 @@ namespace ContactTracing
             this.temp_bx = new System.Windows.Forms.TextBox();
             this.title2_lbl = new System.Windows.Forms.Label();
             this.temp_lbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.bg_color.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,13 +98,6 @@ namespace ContactTracing
             this.surName_bx.Name = "surName_bx";
             this.surName_bx.Size = new System.Drawing.Size(127, 23);
             this.surName_bx.TabIndex = 2;
-            // 
-            // age_bx
-            // 
-            this.age_bx.Location = new System.Drawing.Point(97, 166);
-            this.age_bx.Name = "age_bx";
-            this.age_bx.Size = new System.Drawing.Size(39, 23);
-            this.age_bx.TabIndex = 2;
             // 
             // label_name
             // 
@@ -237,7 +232,7 @@ namespace ContactTracing
             this.label_gender.BackColor = System.Drawing.Color.Transparent;
             this.label_gender.Font = new System.Drawing.Font("Orator Std", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_gender.ForeColor = System.Drawing.Color.White;
-            this.label_gender.Location = new System.Drawing.Point(140, 166);
+            this.label_gender.Location = new System.Drawing.Point(149, 167);
             this.label_gender.Name = "label_gender";
             this.label_gender.Size = new System.Drawing.Size(50, 21);
             this.label_gender.TabIndex = 3;
@@ -326,6 +321,9 @@ namespace ContactTracing
             // bg_color
             // 
             this.bg_color.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.bg_color.Controls.Add(this.age_bx);
+            this.bg_color.Controls.Add(this.label1);
+            this.bg_color.Controls.Add(this.optional_email);
             this.bg_color.Controls.Add(this.checkBox_confirm);
             this.bg_color.Controls.Add(this.label_confirmation2);
             this.bg_color.Controls.Add(this.label_confirmation1);
@@ -357,7 +355,6 @@ namespace ContactTracing
             this.bg_color.Controls.Add(this.label_email);
             this.bg_color.Controls.Add(this.temp_bx);
             this.bg_color.Controls.Add(this.middleName_bx);
-            this.bg_color.Controls.Add(this.age_bx);
             this.bg_color.Controls.Add(this.title2_lbl);
             this.bg_color.Controls.Add(this.label_name);
             this.bg_color.Controls.Add(this.label_Age);
@@ -366,6 +363,25 @@ namespace ContactTracing
             this.bg_color.Name = "bg_color";
             this.bg_color.Size = new System.Drawing.Size(522, 484);
             this.bg_color.TabIndex = 6;
+            // 
+            // age_bx
+            // 
+            this.age_bx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.age_bx.FormattingEnabled = true;
+            this.age_bx.Location = new System.Drawing.Point(97, 167);
+            this.age_bx.Name = "age_bx";
+            this.age_bx.Size = new System.Drawing.Size(46, 23);
+            this.age_bx.TabIndex = 10;
+            // 
+            // optional_email
+            // 
+            this.optional_email.AutoSize = true;
+            this.optional_email.ForeColor = System.Drawing.Color.LightYellow;
+            this.optional_email.Location = new System.Drawing.Point(35, 264);
+            this.optional_email.Name = "optional_email";
+            this.optional_email.Size = new System.Drawing.Size(56, 15);
+            this.optional_email.TabIndex = 9;
+            this.optional_email.Text = "*optional";
             // 
             // checkBox_confirm
             // 
@@ -393,7 +409,7 @@ namespace ContactTracing
             // 
             this.sex_options.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sex_options.FormattingEnabled = true;
-            this.sex_options.Location = new System.Drawing.Point(183, 166);
+            this.sex_options.Location = new System.Drawing.Point(194, 167);
             this.sex_options.Name = "sex_options";
             this.sex_options.Size = new System.Drawing.Size(102, 23);
             this.sex_options.TabIndex = 6;
@@ -480,6 +496,16 @@ namespace ContactTracing
             this.temp_lbl.TabIndex = 3;
             this.temp_lbl.Text = "Temperature:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.LightYellow;
+            this.label1.Location = new System.Drawing.Point(393, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 15);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "*optional";
+            // 
             // ContactTracing_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -502,7 +528,6 @@ namespace ContactTracing
         private System.Windows.Forms.Button submit_btn;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox surName_bx;
-        private System.Windows.Forms.TextBox age_bx;
         private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.TextBox firstName_bx;
         private System.Windows.Forms.TextBox middleName_bx;
@@ -536,6 +561,9 @@ namespace ContactTracing
         private System.Windows.Forms.Label temp_lbl;
         private System.Windows.Forms.CheckBox checkBox_confirm;
         private System.Windows.Forms.Button view_btn;
+        private System.Windows.Forms.Label optional_email;
+        private System.Windows.Forms.ComboBox age_bx;
+        private System.Windows.Forms.Label label1;
     }
 }
 
