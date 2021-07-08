@@ -22,7 +22,6 @@ namespace ContactTracing
             view_btn.Enabled = false;
 
             int x = 0;
-            EnableSubmitbtn();
         }
         private void enter_btn_Click(object sender, EventArgs e)
         {
@@ -39,8 +38,6 @@ namespace ContactTracing
             sex_options.Items.Add("Female");
             sex_options.Items.Add("Male");
             sex_options.Items.Add("prefer not to say");
-
-            EnableSubmitbtn();
         }
         private void ImportantInfo(string firstName, string middleName, string surName, byte age)
         {
@@ -71,7 +68,6 @@ namespace ContactTracing
                 place_trvl.Visible = false;
                 place_trvl_bx.Visible = false;
             }
-            EnableSubmitbtn();
         }
         private void redHighlight()
         {
@@ -100,15 +96,6 @@ namespace ContactTracing
                                                      $"Did the customer travelled?: {travel_options.SelectedItem}",
                                                      $"Place(s): {place_trvl_bx.Text}",
                                                      "Customer not experiencing any COVID 19 symptoms: Checked"));
-            if (checkBox_confirm.CheckState != CheckState.Checked)
-            {
-                view_btn.Enabled = true;
-            }
-            else
-            {
-                view_btn.Enabled = false;
-            }
-
         }
         private void dataCompleted_message()
         {
@@ -143,6 +130,17 @@ namespace ContactTracing
                 {
                     submit_btn.Enabled = false;
                 }
+            }
+        }
+        private void EnableViewbtn()
+        {
+            if (checkBox_confirm.CheckState != CheckState.Checked)
+            {
+                view_btn.Enabled = true;
+            }
+            else
+            {
+                view_btn.Enabled = false;
             }
         }
     }
