@@ -89,6 +89,8 @@ namespace ContactTracing
             age_bx.Items.Add("63");
             age_bx.Items.Add("64");
             age_bx.Items.Add("65");
+
+            enableSubmit();
         }
         private void ImportantInfo(string firstName, string middleName, string surName, byte age)
         {
@@ -120,22 +122,6 @@ namespace ContactTracing
                 place_trvl.Visible = false;
                 place_trvl_bx.Visible = false;
             }
-            EnableSubmitbtn();
-        }
-        private void redHighlight()
-        {
-            if (surName_bx.Text == "" || firstName_bx.Text == "")
-            {
-                MessageBox.Show("Please input your complete name");
-            }
-            if (age_bx.Text == "" || phone_bx.Text == "" || add_bx.Text == "")
-            {
-                MessageBox.Show("Please input all the required fields");
-            }
-            if (checkBox_confirm.CheckState == CheckState.Indeterminate)
-            {
-                checkBox_confirm.ForeColor = Color.Red;
-            }
         }
         private void view_btn_click(object sender, EventArgs e)
         {
@@ -155,47 +141,40 @@ namespace ContactTracing
             MessageBox.Show(message);
             Application.Exit();
         }
-        private void EnableSubmitbtn()
+        private void enableSubmit()
         {
-            if (surName_bx.Text == "")
+            int x_count = 0;
+            if (surName_bx.Text == "" || firstName_bx.Text == "" || age_bx.SelectedItem == null || sex_options.SelectedItem == null || temp_bx.Text == "" || add_bx.Text == "")
             {
-            }
-           
-        }
-        private void count_x()
-        {
-            int x_count = 10;
-            if (surName_bx.Text == "")
-            {
-                --x_count;
-            }
-            if (firstName_bx.Text == "")
-            {
-                --x_count;
-            }
-            if (age_bx.SelectedItem == null)
-            {
-                --x_count;
-            }
-            if (sex_options.SelectedItem == null)
-            {
-                --x_count;
-            }
-            if (temp_bx.Text == "")
-            {
-                --x_count;
+                ++x_count;
             }
             if (add_bx.Text == "")
             {
-                --x_count;
+                ++x_count;
             }
             if (phone_bx.Text == "")
             {
-                --x_count;
+                ++x_count;
+            }
+            if (travel_options.SelectedItem == null)
+            {
+                ++x_count;
+            }
+            if (place_trvl_bx.Text == "")
+            {
+                ++x_count;
             }
             if (checkBox_confirm.CheckState == CheckState.Indeterminate)
             {
-                --x_count;
+                ++x_count;
+            }
+
+            if (checkBox_confirm.CheckState == CheckState.Checked)
+            {
+                if (x_count < 2)
+                {
+                    submit_btn.Enabled = true;
+                }
             }
         }
     }
