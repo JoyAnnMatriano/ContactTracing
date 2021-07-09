@@ -22,15 +22,31 @@ namespace ContactTracing
         {
             if (checkBox_confirm.CheckState == CheckState.Checked)
             {
-                if (surName_bx.Text == "" || firstName_bx.Text == "" || age_bx.SelectedItem == null || sex_options.SelectedItem == null || temp_bx.Text == "" || add_bx.Text == "" || phone_bx.Text == ""
+                if (travel_options.SelectedItem == "Yes")
+                {
+                    if (surName_bx.Text == "" || firstName_bx.Text == "" || age_bx.SelectedItem == null || sex_options.SelectedItem == null || temp_bx.Text == "" || add_bx.Text == "" || phone_bx.Text == ""
                 || travel_options.SelectedItem == null || place_trvl_bx.Text == "")
-                {
-                    MessageBox.Show("Please fill up all required fields!");
+                    {
+                        MessageBox.Show("Please fill up all required fields!");
+                    }
+                    else
+                    {
+                        ImportantInfo();
+                        dataCompleted_message();
+                    }
                 }
-                else
+                if (travel_options.SelectedItem == "No")
                 {
-                    ImportantInfo();
-                    dataCompleted_message();
+                    if (surName_bx.Text == "" || firstName_bx.Text == "" || age_bx.SelectedItem == null || sex_options.SelectedItem == null || temp_bx.Text == "" || add_bx.Text == "" || phone_bx.Text == ""
+                || travel_options.SelectedItem == null)
+                    {
+                        MessageBox.Show("Please fill up all required fields!");
+                    }
+                    else
+                    {
+                        ImportantInfo();
+                        dataCompleted_message();
+                    }
                 }
             }
             else

@@ -56,6 +56,7 @@ namespace ContactTracing
             this.label_confirmation7 = new System.Windows.Forms.Label();
             this.bg_color = new System.Windows.Forms.Panel();
             this.age_bx = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.optional_email = new System.Windows.Forms.Label();
             this.checkBox_confirm = new System.Windows.Forms.CheckBox();
             this.title_lbl = new System.Windows.Forms.Label();
@@ -68,7 +69,6 @@ namespace ContactTracing
             this.temp_bx = new System.Windows.Forms.TextBox();
             this.title2_lbl = new System.Windows.Forms.Label();
             this.temp_lbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.bg_color.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,6 +98,7 @@ namespace ContactTracing
             this.surName_bx.Name = "surName_bx";
             this.surName_bx.Size = new System.Drawing.Size(127, 23);
             this.surName_bx.TabIndex = 2;
+            this.surName_bx.Text = "s";
             // 
             // label_name
             // 
@@ -373,6 +374,16 @@ namespace ContactTracing
             this.age_bx.Size = new System.Drawing.Size(46, 23);
             this.age_bx.TabIndex = 10;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.LightYellow;
+            this.label1.Location = new System.Drawing.Point(393, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 15);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "*optional";
+            // 
             // optional_email
             // 
             this.optional_email.AutoSize = true;
@@ -495,16 +506,6 @@ namespace ContactTracing
             this.temp_lbl.Size = new System.Drawing.Size(130, 21);
             this.temp_lbl.TabIndex = 3;
             this.temp_lbl.Text = "Temperature:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.LightYellow;
-            this.label1.Location = new System.Drawing.Point(393, 154);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 15);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "*optional";
             // 
             // ContactTracing_form
             // 
