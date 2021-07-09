@@ -17,14 +17,27 @@ namespace ContactTracing
             InitializeComponent();
             place_trvl.Visible = false;
             place_trvl_bx.Visible = false;
-
-            submit_btn.Enabled = false;
         }
         private void enter_btn_Click(object sender, EventArgs e)
         {
-            ImportantInfo(firstName_bx.Text, middleName_bx.Text, surName_bx.Text, byte.Parse(age_bx.Text));
-
-            dataCompleted_message();
+            if (checkBox_confirm.CheckState == CheckState.Checked)
+            {
+                if (surName_bx.Text == "" || firstName_bx.Text == "" || age_bx.SelectedItem == null || sex_options.SelectedItem == null || temp_bx.Text == "" || add_bx.Text == "" || phone_bx.Text == ""
+                || travel_options.SelectedItem == null || place_trvl_bx.Text == "")
+                {
+                    MessageBox.Show("Please fill up all required fields!");
+                }
+                else
+                {
+                    ImportantInfo();
+                    dataCompleted_message();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill up all required fields!");
+            }
+            
         }
         private void ContactTracing_form_Load(object sender, EventArgs e)
         {
@@ -89,29 +102,10 @@ namespace ContactTracing
             age_bx.Items.Add("63");
             age_bx.Items.Add("64");
             age_bx.Items.Add("65");
-
-            enableSubmit();
-        }
-        private void ImportantInfo(string firstName, string middleName, string surName, byte age)
-        {
-            StreamWriter outputFile = File.AppendText("customerDetails.txt");
-            outputFile.WriteLine(DateTime.Now);
-            outputFile.WriteLine("======================================================");
-            outputFile.WriteLine(label_name.Text + " " + firstName + " " + middleName + " " + surName);
-            outputFile.WriteLine($"Age: {age_bx.SelectedItem}");
-            outputFile.WriteLine("Phone Number: " + phone_bx.Text);
-            outputFile.WriteLine("Email: " + email_bx.Text);
-            outputFile.WriteLine("Address: " + add_bx.Text);
-            outputFile.WriteLine($"Sex: {sex_options.SelectedItem}");
-            outputFile.WriteLine($"Did the customer travelled?: {travel_options.SelectedItem}");
-            outputFile.WriteLine($"(if YES) Place(s): {place_trvl_bx.Text}");
-            outputFile.WriteLine("Customer not experiencing any COVID 19 symptoms: Checked");
-            outputFile.WriteLine("=======================================================");
-            outputFile.Close();
         }
         private void travel_options_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             if (travel_options.SelectedItem == "Yes")
             {
                 place_trvl.Visible = true;
@@ -141,41 +135,22 @@ namespace ContactTracing
             MessageBox.Show(message);
             Application.Exit();
         }
-        private void enableSubmit()
+        private void ImportantInfo()
         {
-            int x_count = 0;
-            if (surName_bx.Text == "" || firstName_bx.Text == "" || age_bx.SelectedItem == null || sex_options.SelectedItem == null || temp_bx.Text == "" || add_bx.Text == "")
-            {
-                ++x_count;
-            }
-            if (add_bx.Text == "")
-            {
-                ++x_count;
-            }
-            if (phone_bx.Text == "")
-            {
-                ++x_count;
-            }
-            if (travel_options.SelectedItem == null)
-            {
-                ++x_count;
-            }
-            if (place_trvl_bx.Text == "")
-            {
-                ++x_count;
-            }
-            if (checkBox_confirm.CheckState == CheckState.Indeterminate)
-            {
-                ++x_count;
-            }
-
-            if (checkBox_confirm.CheckState == CheckState.Checked)
-            {
-                if (x_count < 2)
-                {
-                    submit_btn.Enabled = true;
-                }
-            }
+            StreamWriter outputFile = File.AppendText("customerDetails.txt");
+            outputFile.WriteLine(DateTime.Now);
+            outputFile.WriteLine("======================================================");
+            outputFile.WriteLine(label_name.Text + " " + firstName_bx.Text + " " + middleName_bx.Text + " " + surName_bx.Text);
+            outputFile.WriteLine($"Age: {age_bx.SelectedItem}");
+            outputFile.WriteLine("Phone Number: " + phone_bx.Text);
+            outputFile.WriteLine("Email: " + email_bx.Text);
+            outputFile.WriteLine("Address: " + add_bx.Text);
+            outputFile.WriteLine($"Sex: {sex_options.SelectedItem}");
+            outputFile.WriteLine($"Did the customer travelled?: {travel_options.SelectedItem}");
+            outputFile.WriteLine($"(if YES) Place(s): {place_trvl_bx.Text}");
+            outputFile.WriteLine("Customer not experiencing any COVID 19 symptoms: Checked");
+            outputFile.WriteLine("=======================================================");
+            outputFile.Close();
         }
     }
 }
