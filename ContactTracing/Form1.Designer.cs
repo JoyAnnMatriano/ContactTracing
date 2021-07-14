@@ -98,7 +98,6 @@ namespace ContactTracing
             this.surName_bx.Name = "surName_bx";
             this.surName_bx.Size = new System.Drawing.Size(127, 23);
             this.surName_bx.TabIndex = 2;
-            this.surName_bx.Text = "s";
             // 
             // label_name
             // 
@@ -184,10 +183,15 @@ namespace ContactTracing
             // 
             // phone_bx
             // 
+            this.phone_bx.Font = new System.Drawing.Font("Perpetua", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.phone_bx.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.phone_bx.Location = new System.Drawing.Point(345, 246);
             this.phone_bx.Name = "phone_bx";
-            this.phone_bx.Size = new System.Drawing.Size(145, 23);
+            this.phone_bx.Size = new System.Drawing.Size(145, 29);
             this.phone_bx.TabIndex = 2;
+            this.phone_bx.Text = "09XX-XXX-XXXX";
+            this.phone_bx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.phone_bx.MouseClick += new System.Windows.Forms.MouseEventHandler(this.phone_bx_MouseClick);
             // 
             // label_email
             // 

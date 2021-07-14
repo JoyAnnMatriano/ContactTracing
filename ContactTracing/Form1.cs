@@ -169,6 +169,11 @@ namespace ContactTracing
             outputFile.WriteLine("=======================================================");
             outputFile.Close();
         }
+
+        private void phone_bx_MouseClick(object sender, MouseEventArgs e)
+        {
+            phone_bx.Clear();
+        }
     }
 }
 
