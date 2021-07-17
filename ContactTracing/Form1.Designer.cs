@@ -184,7 +184,7 @@ namespace ContactTracing
             // phone_bx
             // 
             this.phone_bx.Font = new System.Drawing.Font("Perpetua", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.phone_bx.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.phone_bx.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.phone_bx.Location = new System.Drawing.Point(345, 246);
             this.phone_bx.Name = "phone_bx";
             this.phone_bx.Size = new System.Drawing.Size(145, 29);
